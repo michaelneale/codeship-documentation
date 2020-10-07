@@ -147,10 +147,18 @@ unclassified:
 
 
 
-### Advanced approaches
+### Advanced Jenkinsfile Runner packaging approaches
+
+It is also possible to package a Jenkinsfile Runner image from scratch.
+It helps when you want to include multiple plugins with complex dependencies, or to create an image with optimized performance.
+These packaging approaches are designed for advanced users only.
 
 * Using Maven-based packaging flows, based on [Jenkinsfile Runner packaging parent POM](https://github.com/jenkinsci/jenkinsfile-runner/tree/master/packaging-parent-pom).
+  This is a recommended way for newly created images.
+  * Demo: [jenkinsci/ci.jenkins.io-runner](https://github.com/jenkinsci/ci.jenkins.io-runner)
 * Using [Custom WAR/Docker Packager](https://github.com/jenkinsci/custom-war-packager) for Jenkins.
+  This way uses a single YAML file to define configurations, but it might be more dicfficult to maintain.
+  * [Demo](https://github.com/jenkinsci/custom-war-packager/tree/master/demo/jenkinsfile-runner)
 
 ## References
 
