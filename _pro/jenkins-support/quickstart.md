@@ -33,7 +33,7 @@ This image will be replaced by the CloudBees-provided image once it is available
 * You have an account on CodeShip
 * You have a GitHub account
 
-## References
+## Quickstart 1: Using existing demo
 
 The easiest way to get started is to fork one of the existing demos.
 In this example we will use the [oleg-nenashev/codeship-jfr-java-maven-demo](https://github.com/oleg-nenashev/codeship-jfr-java-maven-demo) demo repository.
@@ -52,7 +52,10 @@ In this example we will use the [oleg-nenashev/codeship-jfr-java-maven-demo](htt
 * Go to the build page. You should see CodeShip scheduling and then executing your Pipeline, with with the `jenkinsfileRunner` step being invoked.
 * Wait until the build completion. You will see the specified Jenkins Pipeline being executed by the serverless Jenkins Pipeline executor provided by CodeShip Pro.
 
-## Creating your first project
+## Quickstart 2: Creating your first project
+
+In this guide we will create a new project from scratch.
+The project will execute a simple "Hello, world!" pipeline on CodeShip Pro.
 
 * Create a new repository on GitHub.
 * Add the `codeship-services.yml` file to the repository.
