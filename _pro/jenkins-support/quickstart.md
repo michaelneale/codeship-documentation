@@ -83,7 +83,7 @@ jenkinsfileRunner:
 
 ```groovy
 pipeline {
-    agent none
+    agent any
     stages {
         stage('Print message') {
           steps {
