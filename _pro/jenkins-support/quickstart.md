@@ -33,9 +33,10 @@ This image will be replaced by the CloudBees-provided image once it is available
 * You have an account on CodeShip
 * You have a GitHub account
 
-## Quickstart 1: Using existing demo
+## Quickstart 1: (Simplest) Use this working example
 
-The easiest way to get started is to fork one of the existing demos.
+The easiest way to get started is to fork one of the existing examples, which you can then adapt to your own repo (you can also copy the relevant files into your project if you like). 
+
 In this example we will use the [oleg-nenashev/codeship-jfr-java-maven-demo](https://github.com/oleg-nenashev/codeship-jfr-java-maven-demo) demo repository.
 
 * Go to the [https://github.com/oleg-nenashev/codeship-jfr-java-maven-demo](demo repository) and fork the project to your GitHub Account.
@@ -52,7 +53,7 @@ In this example we will use the [oleg-nenashev/codeship-jfr-java-maven-demo](htt
 * Go to the build page. You should see CodeShip scheduling and then executing your Pipeline, with with the `jenkinsfileRunner` step being invoked.
 * Wait until the build completion. You will see the specified Jenkins Pipeline being executed by the serverless Jenkins Pipeline executor provided by CodeShip Pro.
 
-## Quickstart 2: Creating your first project
+## Quickstart 2: (More advanced) Creating from scratch
 
 In this guide we will create a new project from scratch.
 The project will execute a simple "Hello, world!" pipeline on CodeShip Pro.
@@ -62,7 +63,7 @@ The project will execute a simple "Hello, world!" pipeline on CodeShip Pro.
    We will be using an existing Jenkinsfile Runner vanilla image for the demo.
 
 ```yaml
-jenkinsfileRunner:
+jenkins:
   image: jenkins/jenkinsfile-runner:1.0-beta-17
   volumes:
     - .:/workspace
@@ -73,7 +74,7 @@ jenkinsfileRunner:
 
 ```yaml
 - name: Run Jenkinsfile
-  service: jenkinsfileRunner
+  service: jenkins
   command: -f /workspace
 ```
 
@@ -83,7 +84,7 @@ jenkinsfileRunner:
 
 ```groovy
 pipeline {
-    agent none
+    agent any
     stages {
         stage('Print message') {
           steps {
